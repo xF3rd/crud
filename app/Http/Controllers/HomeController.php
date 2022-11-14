@@ -46,8 +46,8 @@ class HomeController extends Controller
 
     public function update(){
 
+            Auth::user()->update($request->all());
 
-
-        return redirect('/home')->with('msg','Dados Salvos com sucesso');
+        return redirect('/home/update')->with('msg','Dados Salvos com sucesso');
     }
 }

@@ -5,7 +5,8 @@
 <div id="edit-create-container" class="col-md-6 offset-md-3">
     <h1>Edite as informações</h1>
     <form action="/home" method="POST">
-       
+    @csrf    
+    @method('PUT')
         <div class="form-group">
             <label for="title">Nome:</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="{{ Auth::user()->name }}">
@@ -26,7 +27,7 @@
             <label for="title">Endereço:</label>
             <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" value="{{ Auth::user()->endereco }}">
         </div>
-        <input type="submit" class="btn btm-primary" value="Salvar informações">
+        <input type="submit" class="btn btn-primary" value="Salvar informações">
     </form>
 </div>
 
