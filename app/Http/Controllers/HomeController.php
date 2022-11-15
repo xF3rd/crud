@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,6 @@ class HomeController extends Controller
      
     public function show(){
 
-
         return view ('show');
     } 
 
@@ -37,17 +37,17 @@ class HomeController extends Controller
         return view ('edit');
     }
 
-    public function store(request $request){
 
-        
+    public function destroy($id) {
+        User::findOrFail($id)->delete();
 
-        return view ('edit');
-    }
+        return redirect('/home')->with('msg','Perfil excluido com sucesso');
+    }  
+    
 
-    public function update(){
+    public function update(Request $request){
+        User::findOrFail($request->id)->update($request->all());
 
-            Auth::user()->update($request->all());
-
-        return redirect('/home/update')->with('msg','Dados Salvos com sucesso');
-    }
+        return redirect('/home/show');
+    }   
 }

@@ -4,11 +4,30 @@
 }
 
 .btn-primary{
-    background-color: #f2a340;
-    border: 2px solid #c28008;
+    background-color: rgb(96, 96, 255);
+    border: 2px solid blue;
+    margin: 40px 0px;
 }
 
 .btn-primary:hover{
-    background-color: #c28008;
-    border: 2px solid #c28008;
+    background-color: blue;
+    border: 2px solid blue;
+    
+}
+
+.btn-danger{
+    color:white;
+    width:100%;
+    background-color: green;
+    border: 2px solid red;
+    margin: 40px 0px;
+}
+
+.btn-danger:hover{
+    background-color: red;
+    border: 2px solid red;
+    
+}
+#btn-container{
+    margin-right: -3rem;
 }
